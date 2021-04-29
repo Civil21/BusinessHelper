@@ -1,4 +1,4 @@
 class PagesController < ApplicationController
-  def index
-  end
+  layout 'layouts/pages_application'
+  def index; end
 end
