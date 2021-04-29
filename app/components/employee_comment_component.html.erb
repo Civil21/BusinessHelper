@@ -1,0 +1,5 @@
+<div>
+  Автор: <%= link_to @employee_comment.employee.name , employee_path(@employee_comment.employee)%>
+  Повідомлення: <%= @employee_comment.text%>
+  Дата: <%= @employee_comment.created_at%>
+</div>

@@ -1,0 +1,12 @@
+<%= form_for @waybill do |f| %>
+
+  <%= f.select :car, Car.all.map{|car|[car.name,car.id]} %>
+
+  <%= f.select :employee, Employee.all.map{|employee|[employee.name,employee.id]} %>
+
+  <%= f.select :place_of_dispatch, Place.all.map{|place|[place.name,place.id]} %>
+  
+  <%= f.select :place_of_arrival, Place.all.map{|place|[place.name,place.id]} %>
+
+  <%= f.submit :submit%>
+<% end %>

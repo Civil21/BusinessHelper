@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employee_id: 1
+  car_id: 1
+  client_id: 1
+  place_of_dispatch_id: 1
+  dispatch_at: 2021-04-29 19:36:19
+  place_of_arrival_id: 1
+  arrival_at: 2021-04-29 19:36:19
+
+two:
+  employee_id: 1
+  car_id: 1
+  client_id: 1
+  place_of_dispatch_id: 1
+  dispatch_at: 2021-04-29 19:36:19
+  place_of_arrival_id: 1
+  arrival_at: 2021-04-29 19:36:19

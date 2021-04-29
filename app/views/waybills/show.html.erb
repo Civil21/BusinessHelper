@@ -1,0 +1,15 @@
+<h1>Накладна №1</h1>
+Накладна її опис та перелік вантажу
+
+для відповідального працівника кнопки зміни статусу
+
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+    <%= render CargoComponent.with_collection(@cargos)%>
+  </tbody>
+</table>
+
+<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>

@@ -1,0 +1,16 @@
+<h1>Накладні</h1>
+<%= link_to "Створити накладну", new_waybill_path, class:"btn"%>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%=render WaybillComponent.with_collection(@waybills)%>
+  </tbody>
+</table>

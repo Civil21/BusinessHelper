@@ -7,5 +7,6 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @employee_comments = @place.employee_comments
   end
 end

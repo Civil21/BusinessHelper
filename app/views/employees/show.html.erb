@@ -1,2 +1,10 @@
 Опис працівника так коментарі під його профілем
 Перелік подій та автомобілів з якими пов'зяаний
+<h1>(#<%= @employee.id%>) <%= @employee.name%></h1>
+<%=link_to @employee.phone, "tel:#{@employee.phone}"%>
+<%= @employee.email%>
+
+<%= @employee.position%>
+
+<%= render "employee_comments/form", object:@employee%>
+<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>

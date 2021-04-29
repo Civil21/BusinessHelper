@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_132212) do
+ActiveRecord::Schema.define(version: 2021_04_29_163655) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 2021_04_29_132212) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "cargo_waybills", force: :cascade do |t|
+    t.integer "cargo_id"
+    t.integer "waybill_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cargos", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "price"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cars", force: :cascade do |t|
@@ -100,6 +115,18 @@ ActiveRecord::Schema.define(version: 2021_04_29_132212) do
     t.string "building_number"
     t.string "phone"
     t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "waybills", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "car_id"
+    t.integer "client_id"
+    t.integer "place_of_dispatch_id"
+    t.datetime "dispatch_at"
+    t.integer "place_of_arrival_id"
+    t.datetime "arrival_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

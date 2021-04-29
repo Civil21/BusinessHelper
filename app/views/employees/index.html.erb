@@ -3,13 +3,13 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Ім'я</th>
+      <th>E-mail</th>
+      <th>Телефон</th>
+      <th>Посада</th>
     </tr>
   </thead>
   <tbody>
-    <%= EmployeeComponent.with_collection(@employees)%>
+    <%= render EmployeeComponent.with_collection(@employees)%>
   </tbody>
 </table>

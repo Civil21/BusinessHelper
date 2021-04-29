@@ -1,8 +1,7 @@
 <tr>
-  <td><%=@employee.id%></td>
-  <td><%=@employee.name%></td>
-  <td><%=@employee.emeil%></td>
-  <td><%=@employee.phone%></td>
+  <td><%=link_to @employee.id, @employee%></td>
+  <td><%=link_to @employee.name, @employee%></td>
+  <td><%=@employee.email%></td>
+  <td><%=link_to @employee.phone, "tel:#{@employee.phone}"%></td>
   <td><%=@employee.position%></td>
-
 </tr>
