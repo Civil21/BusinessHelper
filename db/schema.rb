@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 2021_04_29_163655) do
     t.datetime "dispatch_at"
     t.integer "place_of_arrival_id"
     t.datetime "arrival_at"
+    t.integer "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -15,3 +15,10 @@ ActiveStorage.start()
 
 import "bootstrap"
 import "../stylesheets/application"
+
+
+// $(document).ready(function(){
+//    $('[data-toggle="offcanvas"]').click(function(){
+//        $("#navigation").toggleClass("hidden-xs");
+//    });
+// });

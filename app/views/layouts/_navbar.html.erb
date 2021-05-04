@@ -1,12 +1,15 @@
-<nav class="navbar navbar-light bg-light">
-  Можеш зробити і типу сідебара
-  <%= link_to "Події", events_path%>
-  <%= link_to "Накладні", waybills_path%>
-  <%= link_to "Клієнти", clients_path%>
-  <%= link_to "Місця", places_path%>
-  <%= link_to "Автопарк", cars_path%>
-  <%= link_to "Працівники", employees_path%>
-
-  <%= link_to "Вийти", destroy_employee_session_path, method: :DELETE%>
-
-</nav>
+<div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+    <div class="logo">
+      Test
+    </div>
+    <div class="navi">
+        <ul>
+            <li class="active"><%= link_to "Події", events_path%></li>
+            <li><%= link_to "Накладні", waybills_path%></li>
+            <li><%= link_to "Клієнти", clients_path%></li>
+            <li>  <%= link_to "Місця", places_path%></li>
+            <li><%= link_to "Автопарк", cars_path%></li>
+            <li><%= link_to "Працівники", employees_path%></li>
+        </ul>
+    </div>
+</div>
