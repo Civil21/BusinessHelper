@@ -1,6 +1,7 @@
 @import "bootstrap";
-
+@import "variable/base";
 @import "parts/dashboard";
+@import "particle/all";
 
 *{
   a:focus, a:hover, a {

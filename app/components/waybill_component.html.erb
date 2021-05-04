@@ -4,3 +4,20 @@
   <td><%=link_to @waybill.client.name, @waybill.client%></td>
   <td><%=link_to @waybill.employee.name,@waybill.employee %></td>
 </tr>
+
+<div class="dashboard_item my-3">
+  <div class="row">
+    <div class="col-1">
+      <%=@weybill.id%>
+    </div>
+    <div class="col-3">
+      <%=@waybill.state%>
+    </div>
+    <div class="col-4">
+      <%=link_to @waybill.client.name, @waybill.client%>
+    </div>
+    <div class="col-4">
+      <%=link_to @waybill.employee.name,@waybill.employee %>
+    </div>
+  </div>
+</div>

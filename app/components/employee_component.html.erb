@@ -1,7 +1,19 @@
-<tr>
-  <td><%=link_to @employee.id, @employee%></td>
-  <td><%=link_to @employee.name, @employee%></td>
-  <td><%=@employee.email%></td>
-  <td><%=link_to @employee.phone, "tel:#{@employee.phone}"%></td>
-  <td><%=@employee.position%></td>
-</tr>
+<div class="dashboard_item my-3">
+  <div class="row">
+    <div class="col-1">
+      <%=link_to @employee.id, @employee%>
+    </div>
+    <div class="col-3">
+      <%=link_to @employee.name, @employee%>
+    </div>
+    <div class="col-3">
+      <%=@employee.email%>
+    </div>
+    <div class="col-2">
+      <%=link_to @employee.phone, "tel:#{@employee.phone}"%>
+    </div>
+    <div class="col-3">
+      <%=@employee.position%>
+    </div>
+  </div>
+</div>

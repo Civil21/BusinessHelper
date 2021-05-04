@@ -1,0 +1,20 @@
+@import "params";
+
+@mixin transition($time: .5s, $item: all){
+  -webkit-transition: $item $time ease-in-out;
+     -moz-transition: $item $time ease-in-out;
+       -o-transition: $item $time ease-in-out;
+          transition: $item $time ease-in-out;
+}
+
+@mixin shadow($hl: 3px, $vl: 4px, $blur: 10px, $color: #000000, $op: 0.25){
+  -webkit-box-shadow: $hl $vl $blur rgba($color, $op);
+     -moz-box-shadow: $hl $vl $blur rgba($color, $op);
+          box-shadow: $hl $vl $blur rgba($color, $op);
+}
+
+@mixin radius($x1: 30px){
+  -webkit-border-radius: $x1;
+     -moz-border-radius: $x1;
+          border-radius: $x1;
+}

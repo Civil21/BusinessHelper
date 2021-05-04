@@ -1,15 +1,15 @@
 <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
     <div class="logo">
-      Test
+      Carstec
     </div>
     <div class="navi">
         <ul>
-            <li class="active"><%= link_to "Події", events_path%></li>
-            <li><%= link_to "Накладні", waybills_path%></li>
-            <li><%= link_to "Клієнти", clients_path%></li>
-            <li>  <%= link_to "Місця", places_path%></li>
-            <li><%= link_to "Автопарк", cars_path%></li>
-            <li><%= link_to "Працівники", employees_path%></li>
+            <li class="<%= current_page?(events_path) ? "active" : ""%>"><%= link_to "Події", events_path%></li>
+            <li class="<%= current_page?(waybills_path) ? "active" : ""%>"><%= link_to "Накладні", waybills_path%></li>
+            <li class="<%= current_page?(clients_path) ? "active" : ""%>"><%= link_to "Клієнти", clients_path%></li>
+            <li class="<%= current_page?(places_path) ? "active" : ""%>"><%= link_to "Місця", places_path%></li>
+            <li class="<%= current_page?(cars_path) ? "active" : ""%>"><%= link_to "Автопарк", cars_path%></li>
+            <li class="<%= current_page?(employees_path) ? "active" : ""%>"><%= link_to "Працівники", employees_path%></li>
         </ul>
     </div>
 </div>
