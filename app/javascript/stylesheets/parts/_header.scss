@@ -1,0 +1,66 @@
+header{
+  h1{
+    text-align: center;
+    font-size: $title;
+    padding: 0px 20px 20px;
+  }
+  .img_block{
+    @include transition;
+    position: relative;
+    img{
+      @include transition;
+      @include shadow;
+      @include radius(0px 0px 20px 0px);
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      z-index: 1;
+      position: relative;
+    }
+    &:before{
+      @include transition;
+      @include radius(0px 0px 20px 0px);
+      content: "";
+      position: absolute;
+      width: 90%;
+      max-width:320px;
+      display: block;
+      height: 320px;
+      background-color: rgba($primary-color, .1);
+      top: -15px;
+      left: -15px;
+    }
+    .img_name{
+      @include transition;
+      position: absolute;
+      bottom: 15px;
+      padding: 5px 15px;
+      z-index: 2;
+      background-color: rgba($primary-color, .65);
+      color: $wtext;
+      text-transform: uppercase;
+    }
+    &:hover{
+      transform: scale(1.05);
+      z-index: 2;
+      img{
+        @include radius(0px);
+      }
+      &:before{
+        transform: scale(.6);
+      }
+      .img_name{
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width:1023px) {
+  header{
+    h1{
+      font-size: $xl-text;
+    }
+  }
+}

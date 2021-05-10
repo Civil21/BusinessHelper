@@ -1,0 +1,24 @@
+section{
+  &.gruz{
+    ul{
+      li{
+        position: relative;
+        padding-left: 30px;
+        &:before{
+          content: "";
+          background-color: $primary-color;
+          width: 15px;
+          height: 15px;
+
+          @include radius();
+          position: absolute;
+          left: 0;
+          top: 4px;
+        }
+      }
+    }
+  }
+  &.form{
+    background-color: $wtext;
+  }
+}
