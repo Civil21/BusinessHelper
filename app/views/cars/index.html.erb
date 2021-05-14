@@ -1,15 +1,25 @@
 <h1>Автопарк</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-3">
+        Номер
+      </div>
+      <div class="col-3">
+        Модель
+      </div>
+      <div class="col-1">
+        Рік випуску
+      </div>
+      <div class="col-4">
+        Відповідальна персона
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
     <%=render CarComponent.with_collection(@cars)%>
-  </tbody>
-</table>
+  </div>
+</div>

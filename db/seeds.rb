@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+require 'faker'
+
 Employee.create(email: 'employee@example.com',
                 phone: '+380663477974',
                 password: 'password',
@@ -31,3 +33,26 @@ Employee.create(email: 'employee3@example.com',
                 password_confirmation: 'password',
                 name: 'Вітькін Олексій Васильович',
                 position: 'Спеціаліст з Техніки безпеки')
+
+10.times do
+  maker = Faker::Vehicle.make
+  Car.create(
+    number: Faker::Vehicle.singapore_license_plate,
+    model: maker + ' ' + Faker::Vehicle.model(make_of_model: maker),
+    employee_id: 1 + rand(Employee.count - 1),
+    year: Faker::Vehicle.year
+  )
+end
+
+10.times do
+  Client.create(
+    name: Faker::Name.name,
+    phone: Faker::PhoneNumber.cell_phone_with_country_code,
+    email: Faker::Internet.email
+  )
+end
+10.times do
+  Place.create(
+    phone: Faker::PhoneNumber.cell_phone_with_country_code
+  )
+end

@@ -1,3 +1,13 @@
-<tr>
-  <td><%=@place.id%></td>
-</tr>
+<div class="dashboard_item my-3">
+  <div class="row">
+    <div class="col-1">
+      <%=link_to @place.id, @place%>
+    </div>
+    <div class="col-6">
+      <%=link_to @place.address, "https://www.google.com/maps/search/?api=1&query=#{@place.latitude},#{@place.longitude}"%>
+    </div>
+    <div class="col-5">
+      <%=link_to @place.phone, "tel:#{@place.phone}"%>
+    </div>
+  </div>
+</div>

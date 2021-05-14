@@ -1,15 +1,19 @@
 <h1>Місця</h1>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-6">
+        Адреса
+      </div>
+      <div class="col-5">
+        Телефон
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
     <%=render PlaceComponent.with_collection(@places)%>
-  </tbody>
-</table>
+  </div>
+</div>

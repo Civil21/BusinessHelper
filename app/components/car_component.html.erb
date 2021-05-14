@@ -1,6 +1,19 @@
-<tr>
-  <td><%=@car.id%></td>
-  <td><%=@car.name%></td>
-  <td><%=@car.number%></td>
-  <td><%=@car.model%></td>
-</tr>
+<div class="dashboard_item my-3">
+  <div class="row">
+    <div class="col-1">
+      <%=link_to @car.id, @car%>
+    </div>
+    <div class="col-3">
+      <%=link_to @car.number,@car%>
+    </div>
+    <div class="col-3">
+      <%=@car.model%>
+    </div>
+    <div class="col-1">
+      <%=@car.year%>
+    </div>
+    <div class="col-4">
+      <%=link_to "employ_name", ""%>
+    </div>
+  </div>
+</div>

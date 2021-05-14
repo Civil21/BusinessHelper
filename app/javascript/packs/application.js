@@ -14,7 +14,7 @@ ActiveStorage.start()
 
 
 import "bootstrap"
-import "../stylesheets/application"
+import "stylesheets/application"
 
 
 // $(document).ready(function(){
