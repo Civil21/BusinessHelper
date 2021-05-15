@@ -1,4 +1,20 @@
 footer{
+  overflow: hidden;
   height: 400px;
   background-color: $primary-color;
+  color: white;
+  iframe{
+    position: relative;
+    right: -15px;
+  }
+  .part_1{
+    a{
+      @include transition();
+      color: white;
+      font-weight: bold;
+      &:hover{
+        color: $accent-color;
+      }
+    }
+  }
 }

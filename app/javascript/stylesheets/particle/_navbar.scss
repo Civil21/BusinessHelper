@@ -2,10 +2,16 @@
 
 .home_bar{
   background-color: $primary-color;
-  .navbar-brand{
-    text-transform: uppercase;
-    font-size: $xl-text;
-    font-family: 'Josefin Sans', sans-serif;
-  }
 
+
+}
+.navbar-brand{
+  @include transition;
+  text-transform: uppercase;
+  font-size: $xl-text;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  &:hover{
+    color: $accent-color;
+  }
 }
