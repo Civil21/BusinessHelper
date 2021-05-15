@@ -1,0 +1,90 @@
+select{
+  @include transition();
+  @include radius(5px);
+  @include shadow(3px, 4px, 8px, rgba($btext, .25));
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: white;
+  &:focus{
+    @include radius(10px);
+    outline: none;
+    @include shadow(0px, 0px, 8px, rgba($primary-color, .55));
+  }
+  &.alt{
+    max-width: 100%;
+  }
+}
+
+.field{
+  input:not([type="checkbox"]){
+    @include transition();
+    @include radius(5px);
+    @include shadow(3px, 4px, 8px, rgba($btext, .25));
+    display: block;
+    max-width: 400px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    &:focus{
+      @include radius(10px);
+      outline: none;
+      @include shadow(0px, 0px, 8px, rgba($primary-color, .55));
+    }
+    &.alt{
+      max-width: 100%;
+    }
+  }
+}
+
+.user-dashboard{
+  margin: 50px 0px;
+  text-align: center;
+  label{
+    display: none;
+  }
+  label[for="employee_remember_me"]{
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  h2{
+    text-align: center;
+  }
+  input[type="submit"]{
+    @include transition();
+    background: $accent-color none repeat scroll 0 0;
+    border-radius: 100px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 27px;
+    position: relative;
+    border: none;
+    margin-bottom: 20px;
+    &:hover{
+      background-color: $primary-color;
+      color: #ffffff;
+    }
+    &:focus{
+      border: none;
+      outline: none;
+      box-shadow: none;
+    }
+    &::before {
+      // background: rgba(0, 0, 0, 0) url("../images/plus.png") no-repeat scroll 0 0;
+      content: "";
+      height: 12px;
+      left: 17px;
+      position: absolute;
+      top: 12px;
+      width: 12px;
+    }
+  }
+}
