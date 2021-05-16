@@ -1,22 +1,37 @@
 <%= form_for @waybill do |f| %>
 <div class="dashboard_form my-5">
   <h1 class="text-center">Створення накладної</h1>
-  <%= f.select :car_id, Car.all.map{|car|[car.name,car.id]}, class: "form-control" %>
+  <div class="field">
+    <label for="waybill_car_id">Автомобіль:</label>
+    <%= f.select :car_id, Car.all.map{|car|[car.name,car.id]}, class: "form-control" %>
+  </div>
 
-  <%= f.select :employee_id, Employee.all.map{|employee|[employee.name,employee.id]}, class: "form-control" %>
+  <div class="field">
+    <label for="waybill_employee_id">Виконавець:</label>
+    <%= f.select :employee_id, Employee.all.map{|employee|[employee.name,employee.id]}, class: "form-control" %>
+  </div>
 
-  <%= f.select :client_id, Client.all.map{|client|[client.name,client.id]}, class: "form-control" %>
+  <div class="field">
+    <label for="waybill_client_id">Замовник:</label>
+    <%= f.select :client_id, Client.all.map{|client|[client.name,client.id]}, class: "form-control" %>
+  </div>
 
-  <%= f.select :place_of_dispatch_id, Place.all.map{|place|[place.name,place.id]}, class: "form-control" %>
+  <div class="field">
+    <label for="waybill_place_of_dispatch_id">Місце завантаження:</label>
+    <%= f.select :place_of_dispatch_id, Place.all.map{|place|[place.name,place.id]}, class: "form-control" %>
+  </div>
 
-  <%= f.select :place_of_arrival_id, Place.all.map{|place|[place.name,place.id]}, class: "form-control" %>
+  <div class="field">
+    <label for="waybill_place_of_arrival_id">Місце призначення:</label>
+    <%= f.select :place_of_arrival_id, Place.all.map{|place|[place.name,place.id]}, class: "form-control" %>
+  </div>
   <fieldset>
     <legend>Вантажі:</legend>
     <%= f.fields_for :cargo_waybills do |cargo_waybills_form| %>
-    <%= render "cargo_waybill_fields", f: cargo_waybills_form %>
-  <% end %>
-  <%= link_to_add_fields "Add Вантаж", f, :cargo_waybills %>
-</fieldset>
+      <%= render "cargo_waybill_fields", f: cargo_waybills_form %>
+    <% end %>
+    <%= link_to_add_fields "Додати вантаж", f, :cargo_waybills %>
+  </fieldset>
 <div class=" text-center">
   <%= f.submit "Додати накладну", class:"add-project"%>
 </div>

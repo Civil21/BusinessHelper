@@ -1,10 +1,27 @@
-Опис працівника так коментарі під його профілем
 Перелік подій та автомобілів з якими пов'зяаний
-<h1>(#<%= @employee.id%>) <%= @employee.name%></h1>
-<%=link_to @employee.phone, "tel:#{@employee.phone}"%>
-<%= @employee.email%>
+<h1 class="pb-0">(#<%= @employee.id%>) <%= @employee.name%></h1>
+<b class="d-block"><%= @employee.position%></b>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Номер телефону:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @employee.phone, "tel:#{@employee.phone}"%></b>
+  </div>
+</div>
+<div class="row mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Електронна скринька:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%= @employee.email%></b>
+  </div>
+</div>
 
-<%= @employee.position%>
+
 
 <%= render "employee_comments/form", object:@employee%>
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+<div class="row">
+  <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+  <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+</div>

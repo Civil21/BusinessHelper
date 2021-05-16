@@ -1,5 +1,13 @@
-<div>
-  Автор: <%= link_to @employee_comment.employee.name , employee_path(@employee_comment.employee)%>
-  Повідомлення: <%= @employee_comment.text%>
-  Дата: <%= @employee_comment.created_at%>
+<div class="col-12 col-md-6">
+  <div class="review_card my-3">
+    <div class="d-flex">
+      <%= link_to @employee_comment.employee.name , employee_path(@employee_comment.employee)%> <span> сказав:</span>
+    </div>
+    <div class="review_card_body mt-2">
+      <p class="d-flex align-items-center justify-content-center"><%= @employee_comment.text%></p>
+      <div class="d-flex justify-content-end">
+        <small><%= @employee_comment.created_at.strftime("%d.%m.%Y %H:%M")%></small>
+      </div>
+    </div>
+  </div>
 </div>

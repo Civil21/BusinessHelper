@@ -1,0 +1,18 @@
+.review_card{
+  a, span{
+    padding-right: 5px;
+    font-weight: bold;
+  }
+  .review_card_body{
+    @include shadow;
+    padding: 15px;
+    background-color: $wtext;
+    min-height: 150px;
+    p{
+      min-height: 90px;
+    }
+  }
+  small{
+    color: rgba($btext, .5);
+  }
+}

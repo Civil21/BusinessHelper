@@ -1,6 +1,10 @@
 <%= form_for :employee_comment,url: comment_path do |f| %>
-  <%= f.text_area :text %>
+<hr>
+  <h4 class="mt-4">Створити відгук або скаргу</h4>
+  <div class="field mt-3">
+    <%= f.text_area :text, placeholder: "Введіть відгук або скаргу до працівника", rows: 8 %>
+  </div>
     <%= f.hidden_field :object_id ,value: object.id%>
     <%= f.hidden_field :object_type, value: object.class.name%>
-    <%= f.submit%>
+    <%= f.submit "Зберегти відгук"%>
 <% end %>
