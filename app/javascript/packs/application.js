@@ -32,6 +32,10 @@ toastr.options = {
 }
 window.toastr = toastr
 
+// app/javascript/packs/application.js
+require('./nested-forms/addFields')
+require('./nested-forms/removeFields')
+
 
 // $(document).ready(function(){
 //    $('[data-toggle="offcanvas"]').click(function(){

@@ -66,7 +66,7 @@ end
 20.times do
   Cargo.create(
     price: Faker::Commerce.price,
-    status: 0,
+    state: 0,
     name: Faker::Commerce.product_name,
     description: "Color: #{Faker::Commerce.color}, material: #{Faker::Commerce.material}, code: #{Faker::Commerce.promotion_code}"
   )

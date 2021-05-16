@@ -25,8 +25,13 @@ class WaybillsController < ApplicationController
   end
 
   def create
-    @waybill = Waybill.create(waybill_params)
-    redirect_to @waybill
+    @waybill = Waybill.new(waybill_params)
+    @waybill.state = 0
+    if @waybill.save
+      redirect_to @waybill
+    else
+      redirect_back(fallback_location: waybills_path)
+    end
   end
 
   private
