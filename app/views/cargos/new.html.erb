@@ -1,0 +1,14 @@
+<%= form_for @cargo do |f| %>
+<div class="dashboard_form my-5">
+  <h1 class="text-center">Створення вантажу</h1>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.text_field :price, class: "form-control" %>
+
+  <%= f.text_area :description, class: "form-control" %>
+
+  <div class=" text-center">
+    <%= f.submit "Створити вантаж", class:"add-project"%>
+  </div>
+</div>
+<% end %>

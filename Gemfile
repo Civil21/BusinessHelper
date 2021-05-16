@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 
 gem 'activeadmin'
+gem 'country_select'
 
 gem 'view_component', require: 'view_component/engine'
 

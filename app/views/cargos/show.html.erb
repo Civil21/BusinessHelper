@@ -1,0 +1,11 @@
+<h1>(id: <%=@cargo.id%>) <%=@cargo.name%></h1>
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+    <%= render CargoComponent.with_collection(@cargos)%>
+  </tbody>
+</table>
+
+<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>

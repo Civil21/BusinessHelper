@@ -11,6 +11,11 @@
   </head>
 
   <body>
+    <script type="text/javascript">
+      <% while flash = get_flash do %>
+        toastr['<%= flash[0] %>']('<%= flash[1].html_safe %>');
+      <% end %>
+    </script>
     <%= yield :navbar%>
     <%= yield %>
   </body>

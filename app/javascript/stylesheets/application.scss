@@ -3,8 +3,9 @@
 @import "parts/dashboard";
 @import "particle/all";
 @import "parts/header";
+@import "toastr";
 
-*{
+* {
   a:focus, a:hover, a {
     outline: none;
     text-decoration: none;

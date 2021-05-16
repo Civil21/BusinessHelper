@@ -26,4 +26,8 @@ class Place < ApplicationRecord
       self.city, self.state, self.country = result
     end
   end
+
+  def name
+    address
+  end
 end

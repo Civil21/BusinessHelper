@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :events, only: %i[index show]
   resources :cars, only: %i[index show]
   resources :waybills, only: %i[index show new create]
+  resources :cargos, only: %i[index show new create]
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config

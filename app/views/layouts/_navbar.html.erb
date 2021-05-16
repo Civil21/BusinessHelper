@@ -5,6 +5,7 @@
     <div class="navi">
         <ul>
             <li class="<%= current_page?(events_path) ? "active" : ""%>"><%= link_to "Події", events_path%></li>
+            <li class="<%= current_page?(cargos_path) ? "active" : ""%>"><%= link_to "Вантажі", cargos_path%></li>
             <li class="<%= current_page?(waybills_path) ? "active" : ""%>"><%= link_to "Накладні", waybills_path%></li>
             <li class="<%= current_page?(clients_path) ? "active" : ""%>"><%= link_to "Клієнти", clients_path%></li>
             <li class="<%= current_page?(places_path) ? "active" : ""%>"><%= link_to "Місця", places_path%></li>

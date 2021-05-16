@@ -51,8 +51,23 @@ end
     email: Faker::Internet.email
   )
 end
-10.times do
-  Place.create(
-    phone: Faker::PhoneNumber.cell_phone_with_country_code
+6.times do
+  loop do
+    @place = Place.create(
+      latitude: Faker::Address.latitude,
+      longitude: Faker::Address.longitude,
+      phone: Faker::PhoneNumber.cell_phone_with_country_code
+    )
+    break if @place.address.length > 3
+
+    @place.delete
+  end
+end
+20.times do
+  Cargo.create(
+    price: Faker::Commerce.price,
+    status: 0,
+    name: Faker::Commerce.product_name,
+    description: "Color: #{Faker::Commerce.color}, material: #{Faker::Commerce.material}, code: #{Faker::Commerce.promotion_code}"
   )
 end

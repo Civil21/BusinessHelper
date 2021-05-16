@@ -7,5 +7,6 @@ class Waybill < ApplicationRecord
   belongs_to :place_of_arrival, class_name: 'place'
 
   has_many :cargo_waybills
+  accepts_nested_attributes_for :cargo_waybills
   has_many :cargos, through: :cargo_waybills
 end

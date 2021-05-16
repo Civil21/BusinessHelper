@@ -68,11 +68,11 @@
 <section class="form py-5">
   <div class="container">
     <h2 class="text-center mb-3">Перевірити статус вантажу</h2>
-    <form class="" action="index.html" method="post">
+    <%= form_tag waybills_path, method: :get do |f|%>
       <div class="field">
-        <input type="text" name="" value="">
+        <input type="number" name="id">
       </div>
-    </form>
+    <%end%>
   </div>
 </section>
 

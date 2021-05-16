@@ -2,7 +2,7 @@
 <%= form_for @waybill do |f| %>
 <div class="dashboard_form my-5">
   <h1 class="text-center">Створення накладної</h1>
-    <%= f.select :car, Car.all.map{|car|[car.model,car.id]}, class: "form-control" %>
+    <%= f.select :car, Car.all.map{|car|[car.name,car.id]}, class: "form-control" %>
 
     <%= f.select :employee, Employee.all.map{|employee|[employee.name,employee.id]}, class: "form-control" %>
 
