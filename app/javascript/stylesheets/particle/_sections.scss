@@ -19,6 +19,13 @@ section{
     }
   }
   &.form{
-    background-color: $wtext;
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5046393557422969) 50%, rgba(0,0,0,0.5) 100%), url("/cargo-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    h2{
+      color: $wtext;
+    }
   }
 }

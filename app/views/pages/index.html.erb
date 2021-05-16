@@ -70,11 +70,15 @@
 </div>
 <section class="form py-5">
   <div class="container">
-    <h2 class="text-center mb-3">Перевірити статус вантажу</h2>
+    <h2 class="text-center mb-4">Перевірити статус вантажу</h2>
     <%= form_tag waybills_path, method: :get do |f|%>
-      <div class="field">
-        <input type="number" name="id">
+      <div class="field my-3">
+        <input type="number" name="id" placeholder="Введіть ID вашого вантажу">
       </div>
+      <div class="text-center">
+        <input type="submit" value="Перевірити статус" class="add-project">
+      </div>
+
     <%end%>
   </div>
 </section>
