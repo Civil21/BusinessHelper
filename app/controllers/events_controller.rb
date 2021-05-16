@@ -9,4 +9,18 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @employee_comments = @event.employee_comments
   end
+
+  def new
+    @event = Event.new
+  end
+
+  def create
+    @event = Event.create(event_params)
+  end
+
+  private
+
+  def event_params
+    param.require(:event).permit!
+  end
 end
