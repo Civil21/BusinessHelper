@@ -21,6 +21,6 @@ class CargosController < ApplicationController
   private
 
   def cargo_params
-    param.require(:cargo).permit!
+    params.require(:cargo).permit!
   end
 end

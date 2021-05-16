@@ -1,0 +1,15 @@
+<%= form_for @event do |f| %>
+<div class="dashboard_form my-5">
+  <h1 class="text-center">Створення події</h1>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.select :event_status,Event.event_statuses, class: "form-control" %>
+    <%= f.select :event_type,Event.event_types, class: "form-control" %>
+
+  <%= f.text_area :description, class: "form-control" %>
+
+  <div class=" text-center">
+    <%= f.submit "Створити подію", class:"add-project"%>
+  </div>
+</div>
+<% end %>

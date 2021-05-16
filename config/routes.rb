@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post :comment, to: 'employees#comment'
   resources :places, only: %i[index show]
   resources :clients, only: %i[index show]
-  resources :events, only: %i[index show]
+  resources :events, only: %i[index show new create]
   resources :cars, only: %i[index show]
   resources :waybills, only: %i[index show new create]
   resources :cargos, only: %i[index show new create]
