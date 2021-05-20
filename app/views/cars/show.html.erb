@@ -1,4 +1,45 @@
-Автомобіль та його опис 
+<h1>
 
+  <%= @car.number%>
+  #<%= @car.id%>
+</h1>
+<%=@car.model%>
+<%=@car.year%>
 
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+Пов'язані події
+
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-1">
+        Статус
+      </div>
+      <div class="col-1">
+        Тип
+      </div>
+      <div class="col-3">
+        Назва
+      </div>
+      <div class="col-3">
+        Відповідальний
+      </div>
+      <div class="col-3">
+        Автомобілі
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
+<%=render EventComponent.with_collection(@events)%>
+  </div>
+</div>
+
+<%= render "employee_comments/form", object:@car%>
+<%if @employee_comments.any?%>
+  <div class="row">
+    <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+    <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+  </div>
+<%end%>

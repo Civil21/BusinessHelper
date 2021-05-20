@@ -1,3 +1,43 @@
-Опис місця + перелік поточних пнакладних пов'зяаних з цим місцем і форма коментування
-
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+<h1>Місце id
+  <%=@place.id%></h1>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Повна адреса:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@place.address%></b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Координати:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@place.longitude%>,<%=@place.latitude%>
+    </b>
+  </div>
+</div>
+<%=link_to "Карта", "https://www.google.com/maps/search/?api=1&query=#{@place.latitude},#{@place.longitude}" %>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Телефон:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @place.phone, "tel:#{@place.phone}"%></b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Додаткова інформація:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@place.description%></b>
+  </div>
+</div>
+<%= render "employee_comments/form", object:@place%>
+<%if @employee_comments.any?%>
+  <div class="row">
+    <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+    <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+  </div>
+<%end%>

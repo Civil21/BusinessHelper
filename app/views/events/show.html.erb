@@ -1,5 +1,30 @@
-Опис події
+<h1>
 
-можливі дії та зміна статусу
+  <%=@event.name%>
+#<%=@event.id%>
+</h1>
+статус
+<%=@event.event_status%>
+тип
+<%=@event.event_type%>
 
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+причасні працівники:
+<% @event.employees.each do |employee|%>
+  <%=link_to employee.name,employee %>
+<%end%>
+
+застосовані авто:
+<% @event.cars.each do |car|%>
+  <%=link_to car.name,car %>
+<%end%>
+
+деталі:
+<%=@event.description%>
+
+<%= render "employee_comments/form", object:@event%>
+<%if @employee_comments.any?%>
+<div class="row">
+  <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+  <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+</div>
+<%end%>

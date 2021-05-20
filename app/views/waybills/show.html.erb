@@ -1,15 +1,91 @@
-<h1>Накладна №1</h1>
-Накладна її опис та перелік вантажу
+<h1>Накладна №<%=@waybill.id%></h1>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Cтатус:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@waybill.state%></b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Авто:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @waybill.car.name, @waybill.car%></b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Замовник:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @waybill.client.name, @waybill.client%></b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Відповідальний:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b>
+      <%=link_to @waybill.employee.name, @waybill.employee%>
+    </b>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Місце відправки:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b>
+      <%=link_to @waybill.place_of_dispatch.name, @waybill.place_of_dispatch%>
+    </b>
+  </div>
+</div>
 
-для відповідального працівника кнопки зміни статусу
+<div class="row mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Місце прибуття:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b>
+      <%=link_to @waybill.place_of_arrival.name, @waybill.place_of_arrival%></b>
+  </div>
+</div>
 
-<table>
-  <thead>
-
-  </thead>
-  <tbody>
-    <%= render CargoComponent.with_collection(@cargos)%>
-  </tbody>
-</table>
-
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+<hr>
+<h3>Вантажі</h3>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-2">
+        Cтатус
+      </div>
+      <div class="col-3">
+        Назва
+      </div>
+      <div class="col-2">
+        Ціна
+      </div>
+      <div class="col-4">
+        Опис
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
+    <%=render CargoComponent.with_collection(@cargos)%>
+  </div>
+</div>
+<% if employee_signed_in?%>
+  <%= render "employee_comments/form", object:@waybill%>
+  <%if @employee_comments.any?%>
+    <div class="row">
+      <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+      <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+    </div>
+  <%end%>
+<%end%>

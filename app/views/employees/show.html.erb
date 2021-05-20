@@ -1,5 +1,5 @@
-Перелік подій та автомобілів з якими пов'зяаний
-<h1 class="pb-0">(#<%= @employee.id%>) <%= @employee.name%></h1>
+<h1 class="pb-0">(#<%= @employee.id%>)
+  <%= @employee.name%></h1>
 <b class="d-block"><%= @employee.position%></b>
 <div class="row mt-4">
   <div class="col-6 d-flex justify-content-end">
@@ -17,11 +17,40 @@
     <b><%= @employee.email%></b>
   </div>
 </div>
-
-
+<hr>
+<h3>Пов'язані події</h3>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-1">
+        Статус
+      </div>
+      <div class="col-1">
+        Тип
+      </div>
+      <div class="col-3">
+        Назва
+      </div>
+      <div class="col-3">
+        Відповідальний
+      </div>
+      <div class="col-3">
+        Автомобілі
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
+    <%=render EventComponent.with_collection(@events)%>
+  </div>
+</div>
 
 <%= render "employee_comments/form", object:@employee%>
-<div class="row">
-  <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
-  <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
-</div>
+<%if @employee_comments.any?%>
+  <div class="row">
+    <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+    <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+  </div>
+<%end%>

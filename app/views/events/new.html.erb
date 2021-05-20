@@ -8,12 +8,29 @@
 
   <div class="field">
     <label for="event_event_status">Статус події:</label>
-    <%= f.select :event_status,Event.event_statuses, class: "form-control" %>
+    <%= f.select :event_status,options_for_select(Event.event_statuses.map{|key,value|key}), class: "form-control" %>
   </div>
 
   <div class="field">
     <label for="event_event_type">Тип події:</label>
-    <%= f.select :event_type,Event.event_types, class: "form-control" %>
+    <%= f.select :event_type,options_for_select(Event.event_types.map{|key,value|key}), class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <label for="event">Пов'язані працівники:</label>
+    <% Employee.all.each do |employee|%>
+    <%= f.check_box :employee_ids,{multiple: true}, employee.id,nil%>
+    <%=employee.name%>
+    <br>
+    <%end%>
+  </div>
+  <div class="field">
+    <label for="event">Пов'язані авто:</label>
+    <% Car.all.each do |car|%>
+    <%= f.check_box :car_ids,{multiple: true}, car.id,nil%>
+    <%=car.name%>
+    <br>
+    <%end%>
   </div>
 
   <div class="field">

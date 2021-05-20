@@ -7,6 +7,7 @@ class EmployeesController < ApplicationController
 
   def show
     @employee = Employee.find(params[:id])
+    @events = @employee.events
     @employee_comments = @employee.employee_comments
   end
 

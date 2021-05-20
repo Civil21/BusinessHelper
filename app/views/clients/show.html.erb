@@ -1,3 +1,15 @@
-Клієнт і його опис
+<h1>
+  <%= @client.name%>
+  #<%=@client.id%>
+</h1>
+    email:  <%=@client.email%>
+      tel: <%=link_to @client.phone, "tel:#{@client.phone}"%>
+      description :  <%=@client.description%>
 
-<%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+<%= render "employee_comments/form", object:@client%>
+<%if @employee_comments.any?%>
+  <div class="row">
+    <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
+    <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
+  </div>
+<%end%>

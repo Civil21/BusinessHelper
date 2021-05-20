@@ -1,11 +1,12 @@
-<h1>(id: <%=@cargo.id%>) <%=@cargo.name%></h1>
-<table>
-  <thead>
+<h1>(id:
+  <%=@cargo.id%>)
+  <%=@cargo.name%></h1>
 
-  </thead>
-  <tbody>
-    <%= render CargoComponent.with_collection(@cargos)%>
-  </tbody>
-</table>
+state
+<%=@cargo.state%>
+
+price
+<%=@cargo.price%>
+desc:<%=@cargo.description%>
 
 <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
