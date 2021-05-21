@@ -1,14 +1,35 @@
-<h1>
+<h1 class="pb-0">
   <%= @client.name%>
   #<%=@client.id%>
 </h1>
-    email:  <%=@client.email%>
-      tel: <%=link_to @client.phone, "tel:#{@client.phone}"%>
-      description :  <%=@client.description%>
+<div class="row align-items-center mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Номер телефону клі'єнта:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @client.phone, "tel:#{@client.phone}"%></b>
+  </div>
+</div>
+<div class="row align-items-center my-2">
+  <div class="col-6 d-flex justify-content-end">
+    Електронна скринька клі'єнта:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@client.email%></b>
+  </div>
+</div>
+<div class="row align-items-center mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Опис клі'єнта:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@client.description%></b>
+  </div>
+</div>
 
 <%= render "employee_comments/form", object:@client%>
 <%if @employee_comments.any?%>
-  <div class="row">
+  <div class="row align-items-center">
     <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
     <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
   </div>
