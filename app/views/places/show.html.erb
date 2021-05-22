@@ -1,6 +1,5 @@
-<h1>Місце id
-  <%=@place.id%></h1>
-<div class="row mt-4">
+<h1>Місце <%=@place.id%>: <%=link_to @place.address, "https://www.google.com/maps/search/?api=1&query=#{@place.latitude},#{@place.longitude}", target:"_blanck" %></h1>
+<div class="row align-items-center mt-4">
   <div class="col-6 d-flex justify-content-end">
     Повна адреса:
   </div>
@@ -8,17 +7,17 @@
     <b><%=@place.address%></b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center mt-2">
   <div class="col-6 d-flex justify-content-end">
     Координати:
   </div>
   <div class="col-6 d-flex justify-content-start">
     <b><%=@place.longitude%>,<%=@place.latitude%>
+      (<%=link_to "Карта", "https://www.google.com/maps/search/?api=1&query=#{@place.latitude},#{@place.longitude}", target:"_blanck" %>)
     </b>
   </div>
 </div>
-<%=link_to "Карта", "https://www.google.com/maps/search/?api=1&query=#{@place.latitude},#{@place.longitude}" %>
-<div class="row mt-4">
+<div class="row align-items-center my-2">
   <div class="col-6 d-flex justify-content-end">
     Телефон:
   </div>
@@ -26,7 +25,7 @@
     <b><%=link_to @place.phone, "tel:#{@place.phone}"%></b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center mb-4">
   <div class="col-6 d-flex justify-content-end">
     Додаткова інформація:
   </div>
@@ -36,7 +35,7 @@
 </div>
 <%= render "employee_comments/form", object:@place%>
 <%if @employee_comments.any?%>
-  <div class="row">
+  <div class="row align-items-center">
     <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
     <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
   </div>

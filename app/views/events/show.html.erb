@@ -1,25 +1,50 @@
-<h1>
-
+<h1 class="pb-0">(#<%=@event.id%>)
   <%=@event.name%>
-#<%=@event.id%>
 </h1>
-статус
-<%=@event.event_status%>
-тип
-<%=@event.event_type%>
-
-причасні працівники:
-<% @event.employees.each do |employee|%>
-  <%=link_to employee.name,employee %>
-<%end%>
-
-застосовані авто:
-<% @event.cars.each do |car|%>
-  <%=link_to car.name,car %>
-<%end%>
-
-деталі:
-<%=@event.description%>
+<div class="row align-items-center mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Статус події:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@event.event_status%></b>
+  </div>
+</div>
+<div class="row align-items-center mt-2">
+  <div class="col-6 d-flex justify-content-end">
+    Тип події:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@event.event_type%></b>
+  </div>
+</div>
+<div class="row align-items-center mt-2">
+  <div class="col-6 d-flex justify-content-end">
+    Причасні працівники:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><% @event.employees.each do |employee|%>
+      <%=link_to employee.name,employee %>
+    <%end%></b>
+  </div>
+</div>
+<div class="row align-items-center my-2">
+  <div class="col-6 d-flex justify-content-end">
+    Використані автомобілі:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><% @event.cars.each do |car|%>
+      <%=link_to car.name,car %>
+    <%end%></b>
+  </div>
+</div>
+<div class="row align-items-center mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Опис події:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@event.description%></b>
+  </div>
+</div>
 
 <%= render "employee_comments/form", object:@event%>
 <%if @employee_comments.any?%>

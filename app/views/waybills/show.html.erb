@@ -1,5 +1,5 @@
 <h1>Накладна №<%=@waybill.id%></h1>
-<div class="row mt-4">
+<div class="row align-items-center mt-4">
   <div class="col-6 d-flex justify-content-end">
     Cтатус:
   </div>
@@ -7,7 +7,7 @@
     <b><%=@waybill.state%></b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center mt-2">
   <div class="col-6 d-flex justify-content-end">
     Авто:
   </div>
@@ -15,7 +15,7 @@
     <b><%=link_to @waybill.car.name, @waybill.car%></b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center mt-2">
   <div class="col-6 d-flex justify-content-end">
     Замовник:
   </div>
@@ -23,7 +23,7 @@
     <b><%=link_to @waybill.client.name, @waybill.client%></b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center mt-2">
   <div class="col-6 d-flex justify-content-end">
     Відповідальний:
   </div>
@@ -33,7 +33,7 @@
     </b>
   </div>
 </div>
-<div class="row mt-4">
+<div class="row align-items-center my-2">
   <div class="col-6 d-flex justify-content-end">
     Місце відправки:
   </div>
@@ -44,7 +44,7 @@
   </div>
 </div>
 
-<div class="row mt-4">
+<div class="row align-items-center mb-4">
   <div class="col-6 d-flex justify-content-end">
     Місце прибуття:
   </div>
@@ -58,7 +58,7 @@
 <h3>Вантажі</h3>
 <div class="dashboard_list">
   <div class="dashboard_list_head">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-1">
         ID
       </div>
@@ -83,7 +83,7 @@
 <% if employee_signed_in?%>
   <%= render "employee_comments/form", object:@waybill%>
   <%if @employee_comments.any?%>
-    <div class="row">
+    <div class="row align-items-center">
       <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
       <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
     </div>

@@ -1,12 +1,30 @@
-<h1>(id:
+<h1 class="pb-0">(#
   <%=@cargo.id%>)
-  <%=@cargo.name%></h1>
-
-state
-<%=@cargo.state%>
-
-price
-<%=@cargo.price%>
-desc:<%=@cargo.description%>
+  <%=@cargo.name%>
+</h1>
+<div class="row align-items-center mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Статус вантажу:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@cargo.state%></b>
+  </div>
+</div>
+<div class="row align-items-center my-2">
+  <div class="col-6 d-flex justify-content-end">
+    Ціна вантажу:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@cargo.price%> у.о.</b>
+  </div>
+</div>
+<div class="row align-items-center mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Опис вантажу:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@cargo.description%></b>
+  </div>
+</div>
 
 <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>

@@ -1,14 +1,17 @@
 .dashboard_list{
   text-align: center;
+  padding-bottom: 15px;
   .dashboard_list_head{
     font-size: 1.2rem;
     font-weight: bold;
+    padding: 0px 10px;
   }
   .dashboard_list_body{
+
     .dashboard_item{
       @include shadow;
       background-color: $wtext;
-      padding: 12px 0px;
+      padding: 12px 10px;
       a{
         @include transition;
         color: $accent-color;

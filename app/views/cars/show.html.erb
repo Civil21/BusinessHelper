@@ -1,16 +1,43 @@
-<h1>
-
+<h1 class="pb-0">
+  (#<%= @car.id%>)
   <%= @car.number%>
-  #<%= @car.id%>
 </h1>
-<%=@car.model%>
-<%=@car.year%>
+<b class="d-block"><%=@car.model%></b>
 
-Пов'язані події
+<div class="row align-items-center mt-4">
+  <div class="col-6 d-flex justify-content-end">
+    Модель автомобіля:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@car.model%></b>
+  </div>
+</div>
+<div class="row align-items-center my-2">
+  <div class="col-6 d-flex justify-content-end">
+    Номер автомобіля:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%= @car.number%></b>
+  </div>
+</div>
+<div class="row align-items-center mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Рік випуску:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=@car.year%></b>
+  </div>
+</div>
+
+
+
+
+<hr>
+<h3>Пов'язані події</h3>
 
 <div class="dashboard_list">
   <div class="dashboard_list_head">
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-1">
         ID
       </div>
@@ -38,7 +65,7 @@
 
 <%= render "employee_comments/form", object:@car%>
 <%if @employee_comments.any?%>
-  <div class="row">
+  <div class="row align-items-center">
     <h4 class="mt-4 mb-3">Відгуки або скарги</h4>
     <%= render EmployeeCommentComponent.with_collection(@employee_comments)%>
   </div>
