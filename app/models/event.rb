@@ -5,13 +5,11 @@ class Event < ApplicationRecord
   has_many :event_cars
   has_many :cars, through: :event_cars
   enum event_status: {
-    'state 1' => 0,
-    'state 2' => 1,
-    'state 3' => 2
+    ' актуальне' => 0,
+    'неактуальне' => 1
   }
   enum event_type: {
-    'type 1' => 0,
-    'type 2' => 1,
-    'type 3' => 2
+    'аварія' => 0,
+    'новина' => 1
   }
 end
