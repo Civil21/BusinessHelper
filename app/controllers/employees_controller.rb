@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @employees = Employee.all
+    @employees = Employee.all.order("id ASC")
   end
 
   def show

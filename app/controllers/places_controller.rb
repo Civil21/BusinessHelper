@@ -2,7 +2,7 @@ class PlacesController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @places = Place.all
+    @places = Place.all.order("id ASC")
   end
 
   def show

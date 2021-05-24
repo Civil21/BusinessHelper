@@ -2,7 +2,8 @@ class CargosController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @cargos = Cargo.all
+    @cargos = Cargo.all.order("id ASC")
+
   end
 
   def show

@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @cars = Car.all
+    @cars = Car.all.order("id ASC")
   end
 
   def show

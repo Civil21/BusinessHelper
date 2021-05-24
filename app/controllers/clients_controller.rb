@@ -2,7 +2,7 @@ class ClientsController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @clients = Client.all
+    @clients = Client.all.order("id ASC")
   end
 
   def show

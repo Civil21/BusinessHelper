@@ -17,6 +17,9 @@ header{
       z-index: 1;
       position: relative;
     }
+    .ku_ku{
+      display: none;
+    }
     &:before{
       @include transition;
       @include radius(0px 0px 20px 0px);
@@ -45,6 +48,9 @@ header{
       z-index: 2;
       img{
         @include radius(0px);
+      }
+      .ku_ku{
+        display: inline-block;
       }
       &:before{
         transform: scale(.6);

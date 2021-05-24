@@ -1,10 +1,10 @@
 <div class="nested-fields">
     <%= f.hidden_field :_destroy %>
     <div>
-        <%= f.label :cargo_id %>
+        <%= f.label :cargo_id, "Оберіть вантаж" %>
         <%= f.select :cargo_id, Cargo.all.map{|cargo|[cargo.name,cargo.id]}, class: "form-control"  %>
     </div>
     <div>
-        <%= link_to "Remove", '#', class: "remove_fields" %>
+        <%= link_to "Видалити", '#', class: "remove_fields" %>
     </div>
 </div>

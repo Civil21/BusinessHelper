@@ -1,28 +1,28 @@
 <div class="form-signin">
-  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  <h1 class="h3 mb-0 fw-normal">Вхід до системи</h1>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field">
       <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"e-mail" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Електронна скринька" %>
     </div>
 
     <div class="field">
       <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password",placeholder:"password" %>
+      <%= f.password_field :password, autocomplete: "current-password",placeholder:"Пароль" %>
     </div>
 
     <% if devise_mapping.rememberable? %>
       <div class="field">
         <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.label :remember_me, "Запам'ятати мене" %>
       </div>
     <% end %>
 
     <div class="actions">
-      <%= f.submit "Log in" %>
+      <%= f.submit "Увійти" %>
     </div>
   <% end %>
 
-  <%= render "employees/shared/links" %>
+  <%#= render "employees/shared/links" %>
 </div>

@@ -6,7 +6,7 @@ class WaybillsController < ApplicationController
       redirect_to waybill_path(params[:id])
     else
       authenticate_employee!
-      @waybills = Waybill.all
+      @waybills = Waybill.all.order("id ASC")
     end
   end
 
@@ -15,7 +15,7 @@ class WaybillsController < ApplicationController
       @employee_comments = @waybill.employee_comments
       @cargos = @waybill.cargos
     else
-      flash_block('Неправильний номер накладної', 'warning')
+      flash_block('Вантажної накладної за вказаним номером не існує', 'warning')
       redirect_back(fallback_location: root_path)
     end
   end

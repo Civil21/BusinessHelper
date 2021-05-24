@@ -6,7 +6,7 @@
 
 <div class="row align-items-center mt-4">
   <div class="col-6 d-flex justify-content-end">
-    Модель автомобіля:
+    Марка і модель:
   </div>
   <div class="col-6 d-flex justify-content-start">
     <b><%=@car.model%></b>
@@ -20,12 +20,20 @@
     <b><%= @car.number%></b>
   </div>
 </div>
-<div class="row align-items-center mb-4">
+<div class="row align-items-center my-2">
   <div class="col-6 d-flex justify-content-end">
     Рік випуску:
   </div>
   <div class="col-6 d-flex justify-content-start">
     <b><%=@car.year%></b>
+  </div>
+</div>
+<div class="row align-items-center mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Відповідальна особа:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%=link_to @car.employee.name, @car.employee%></b>
   </div>
 </div>
 

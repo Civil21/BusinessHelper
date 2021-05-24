@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @events = Event.all
+    @events = Event.all.order("id ASC")
   end
 
   def show
