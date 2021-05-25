@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   root to: 'pages#index'
   devise_for :employees
+
   resources :employees, only: %i[index show]
   post :comment, to: 'employees#comment'
   resources :places, only: %i[index show]
   resources :clients, only: %i[index show]
   resources :events, only: %i[index show new create]
   resources :cars, only: %i[index show]
-  resources :waybills, only: %i[index show new create]
+  resources :waybills, only: %i[index show new create] do
+    collection do
+      get :check, to: 'pages#check_waybill'
+    end
+  end
   resources :cargos, only: %i[index show new create]
 
   ActiveAdmin.routes(self)

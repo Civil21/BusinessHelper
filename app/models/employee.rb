@@ -9,6 +9,8 @@ class Employee < ApplicationRecord
   has_many :employee_comments, as: :object, dependent: :destroy
   has_many :waybills
 
-  has_many :event_employees
+  has_many :event_employees, dependent: :destroy
   has_many :events, through: :event_employees
+
+  has_many :cars, dependent: :destroy
 end

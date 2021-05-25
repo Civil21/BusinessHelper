@@ -2,11 +2,12 @@ class EmployeesController < ApplicationController
   before_action :authenticate_employee!
 
   def index
-    @employees = Employee.all.order("id ASC")
+    @employees = Employee.all.order('id ASC')
   end
 
   def show
     @employee = Employee.find(params[:id])
+    @cars = @employee.cars
     @events = @employee.events
     @employee_comments = @employee.employee_comments
   end

@@ -12,9 +12,8 @@ class Waybill < ApplicationRecord
 
   has_many :employee_comments, as: :object, dependent: :destroy
 
-  enum state: [
-    'state 1',
-    'state 2',
-    'state 3'
+  enum state: %w[
+    Активна
+    Виконана
   ]
 end

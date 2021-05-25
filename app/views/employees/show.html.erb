@@ -17,6 +17,40 @@
     <b><%= @employee.email%></b>
   </div>
 </div>
+<div class="row align-items-center mt-2 mb-4">
+  <div class="col-6 d-flex justify-content-end">
+    Вік:
+  </div>
+  <div class="col-6 d-flex justify-content-start">
+    <b><%= @employee.age%></b>
+  </div>
+</div>
+<hr>
+<h3>Відповідає за авто:</h3>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row align-items-center">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-3">
+        Номер
+      </div>
+      <div class="col-3">
+        Марка і модель
+      </div>
+      <div class="col-1">
+        Рік випуску
+      </div>
+      <div class="col-4">
+        Відповідальна персона
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
+    <%=render CarComponent.with_collection(@cars)%>
+  </div>
+</div>
 <hr>
 <h3>Пов'язані події</h3>
 <div class="dashboard_list">

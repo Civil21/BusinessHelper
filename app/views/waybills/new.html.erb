@@ -7,11 +7,6 @@
   </div>
 
   <div class="field">
-    <label for="waybill_employee_id">Виконавець:</label>
-    <%= f.select :employee_id, Employee.all.map{|employee|[employee.name,employee.id]}, class: "form-control" %>
-  </div>
-
-  <div class="field">
     <label for="waybill_client_id">Замовник:</label>
     <%= f.select :client_id, Client.all.map{|client|[client.name,client.id]}, class: "form-control" %>
   </div>

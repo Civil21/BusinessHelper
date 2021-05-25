@@ -1,23 +1,14 @@
 class WaybillsController < ApplicationController
-  before_action :authenticate_employee!, except: %i[show index]
+  before_action :authenticate_employee!
 
   def index
-    if params[:id]
-      redirect_to waybill_path(params[:id])
-    else
-      authenticate_employee!
-      @waybills = Waybill.all.order("id ASC")
-    end
+    @waybills = Waybill.all.order('id ASC')
   end
 
   def show
-    if @waybill = Waybill.find_by_id(params[:id])
-      @employee_comments = @waybill.employee_comments
-      @cargos = @waybill.cargos
-    else
-      flash_block('Вантажної накладної за вказаним номером не існує', 'warning')
-      redirect_back(fallback_location: root_path)
-    end
+    @waybill = Waybill.find(params[:id])
+    @employee_comments = @waybill.employee_comments
+    @cargos = @waybill.cargos
   end
 
   def new
@@ -25,7 +16,7 @@ class WaybillsController < ApplicationController
   end
 
   def create
-    @waybill = Waybill.new(waybill_params)
+    @waybill = employee.waybills.build(waybill_params)
     @waybill.state = 0
     if @waybill.save
       redirect_to @waybill

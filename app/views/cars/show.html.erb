@@ -4,22 +4,6 @@
 </h1>
 <b class="d-block"><%=@car.model%></b>
 
-<div class="row align-items-center mt-4">
-  <div class="col-6 d-flex justify-content-end">
-    Марка і модель:
-  </div>
-  <div class="col-6 d-flex justify-content-start">
-    <b><%=@car.model%></b>
-  </div>
-</div>
-<div class="row align-items-center my-2">
-  <div class="col-6 d-flex justify-content-end">
-    Номер автомобіля:
-  </div>
-  <div class="col-6 d-flex justify-content-start">
-    <b><%= @car.number%></b>
-  </div>
-</div>
 <div class="row align-items-center my-2">
   <div class="col-6 d-flex justify-content-end">
     Рік випуску:
@@ -36,9 +20,6 @@
     <b><%=link_to @car.employee.name, @car.employee%></b>
   </div>
 </div>
-
-
-
 
 <hr>
 <h3>Пов'язані події</h3>

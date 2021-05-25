@@ -14,25 +14,26 @@ Employee.create(email: 'employee@example.com',
                 password: 'password',
                 password_confirmation: 'password',
                 name: 'Пупкін Василь Васильович',
-                position: 'Менеджер з продаж')
+                position: 'Менеджер з продаж', age: 40)
 Employee.create(email: 'employee1@example.com',
                 phone: '+380663477974',
                 password: 'password',
                 password_confirmation: 'password',
                 name: 'Пупкін Степан Васильович',
-                position: 'Водій експедитор')
+                position: 'Водій експедитор', age: 28)
 Employee.create(email: 'employee2@example.com',
                 phone: '+380663477974',
                 password: 'password',
                 password_confirmation: 'password',
                 name: 'Галкін Василь Васильович',
-                position: 'Грузчик')
+                position: 'Грузчик', age: 24)
 Employee.create(email: 'employee3@example.com',
                 phone: '+380663477974',
                 password: 'password',
                 password_confirmation: 'password',
                 name: 'Вітькін Олексій Васильович',
-                position: 'Спеціаліст з Техніки безпеки')
+                position: 'Спеціаліст з Техніки безпеки',
+                age: 36)
 
 10.times do
   maker = Faker::Vehicle.make

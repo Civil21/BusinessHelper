@@ -26,6 +26,32 @@
     <b><%=@client.description%></b>
   </div>
 </div>
+<hr>
+<h3>Замовлення:</h3>
+<div class="dashboard_list">
+  <div class="dashboard_list_head">
+    <div class="row align-items-center">
+      <div class="col-1">
+        ID
+      </div>
+      <div class="col-3">
+        Cтатус
+      </div>
+      <div class="col-2">
+        Авто
+      </div>
+      <div class="col-3">
+        Замовник
+      </div>
+      <div class="col-3">
+        Виконавець
+      </div>
+    </div>
+  </div>
+  <div class="dashboard_list_body">
+    <%=render WaybillComponent.with_collection(@waybills)%>
+  </div>
+</div>
 
 <%= render "employee_comments/form", object:@client%>
 <%if @employee_comments.any?%>
