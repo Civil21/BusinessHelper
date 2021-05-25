@@ -7,6 +7,7 @@ class PagesController < ApplicationController
       flash_block('Потрібно ввести номер вантажної накладної', 'warning')
       redirect_to request.referer + '#waybill_info'
     elsif @waybill = Waybill.find_by_id(params[:id])
+      @cargos = @waybill.cargos
     else
       flash_block('Вантажної накладної за вказаним номером не існує', 'warning')
       redirect_back(fallback_location: root_path)
