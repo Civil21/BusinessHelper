@@ -16,7 +16,7 @@ class WaybillsController < ApplicationController
   end
 
   def create
-    @waybill = employee.waybills.build(waybill_params)
+    @waybill = current_employee.waybills.build(waybill_params)
     @waybill.state = 0
     if @waybill.save
       redirect_to @waybill

@@ -16,7 +16,13 @@ class CargosController < ApplicationController
   end
 
   def create
-    @cargo = Cargo.create
+    @cargo = Cargo.create(cargo_params)
+    @cargo.state = 0
+    if @cargo.save
+      redirect_to @cargo
+    else
+      render :new
+    end
   end
 
   private
