@@ -12,9 +12,11 @@
 
   <body>
     <script type="text/javascript">
-      <% while flash = get_flash do %>
-        toastr['<%= flash[0] %>']('<%= flash[1].html_safe? %>');
-      <% end %>
+      document.addEventListener("turbolinks:load", function () {
+        <% while (select_flash = get_flash) do %>
+        toastr['<%= select_flash[:type] %>']('<%= select_flash[:text]&.html_safe %>');
+        <% end %>
+      })
     </script>
     <%= yield :navbar%>
     <%= yield %>

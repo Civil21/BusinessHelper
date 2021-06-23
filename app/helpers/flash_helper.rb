@@ -1,9 +1,9 @@
 module FlashHelper
-  def current_flash(flash_type = :flash)
+  def current_flash(flash_type = :flash_block)
     @current_flash ||= session[flash_type] || []
   end
 
-  def flash_block(text, type = 'success', flash_type = :flash)
+  def flash_block(text, type = 'success', flash_type = :flash_block)
     session[flash_type] = (current_flash(flash_type) << { type: type, text: text })
   end
 

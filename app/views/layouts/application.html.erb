@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <script type="text/javascript">
+      document.addEventListener("turbolinks:load", function () {
+        <% while (select_flash = get_flash) do %>
+        toastr['<%= select_flash[:type] %>']('<%= select_flash[:text]&.html_safe %>');
+        <% end %>
+      })
+    </script>
   <div class="container-fluid display-table">
     <div class="row display-table-row">
       <%= render "layouts/navbar"%>
