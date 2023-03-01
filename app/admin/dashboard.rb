@@ -4,8 +4,28 @@ ActiveAdmin.register_page "Dashboard" do
   content title: proc { I18n.t("active_admin.dashboard") } do
     div class: "blank_slate_container", id: "dashboard_default_message" do
       span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+        span "Вітаю в адміністративній панелі"
+        small "Тут ви можете управляти інформацією про проєкт"
+      end
+    end
+    div class: "d-flex" do
+      div class: "blank_slate_container" do
+        h2 "Позиції робітників", style: "text-align: center; margin-bottom: 20px"
+        span class: "blank_slate" do
+          pie_chart Employee.group(:position).count
+        end
+      end
+      div class: "blank_slate_container" do
+        h2 "Статус замовлень", style: "text-align: center; margin-bottom: 20px"
+        span class: "blank_slate" do
+          pie_chart Waybill.group(:state).count
+        end
+      end
+      div class: "blank_slate_container" do
+        h2 "Статус грузу", style: "text-align: center; margin-bottom: 20px"
+        span class: "blank_slate" do
+          pie_chart Cargo.group(:state).count
+        end
       end
     end
 
