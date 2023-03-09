@@ -19,7 +19,10 @@ section{
     }
   }
   &.form{
-    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5046393557422969) 50%, rgba(0,0,0,0.5) 100%), url("/cargo-min.jpg");
+    display: flex;
+    align-items: center;
+    height: calc(100vh - 62px);
+    background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5046393557422969) 50%, rgba(0,0,0,0.5) 100%), url("/cargo.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
